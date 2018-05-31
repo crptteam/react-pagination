@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Should renders without problems 1`] = `
+<Pagination
+  onSelect={[Function]}
+  pagesCount={44}
+  selected={1}
+  theme={
+    Object {
+      "disabled": Object {
+        "border": "",
+        "color": "#212C42",
+      },
+      "fontSize": "14px",
+      "fontWeight": 200,
+      "height": "32px",
+      "main": Object {
+        "border": "1px solid #ABADB5",
+        "color": "#212C42",
+      },
+      "width": "32px",
+    }
+  }
+>
+  <MainWrap>
+    <div
+      className="MainWrap-kBHGNz kWOrkg"
+    >
+      <IconWrap
+        onClick={[Function]}
+      >
+        <div
+          className="IconWrap-jLxEbf eGKZDW"
+          onClick={[Function]}
+        >
+          <LeftPaginationArrow
+            fill="#212C42"
+            height="10"
+            viewBox="0 0 6 10"
+            width="6"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              fill="#212C42"
+              height="10"
+              viewBox="0 0 6 10"
+              width="6"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M4.113 9.669c.432.441 1.13.441 1.563 0a1.145 1.145 0 0 0 0-1.596L2.668 4.999l3.008-3.072a1.145 1.145 0 0 0 0-1.596 1.087 1.087 0 0 0-1.563 0l-3.79 3.87A1.14 1.14 0 0 0 0 5c0 .29.108.578.324.799l3.79 3.87z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </LeftPaginationArrow>
+        </div>
+      </IconWrap>
+      <PageInput
+        onBlur={[Function]}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        pattern="[0-9]*"
+        theme={
+          Object {
+            "disabled": Object {
+              "border": "",
+              "color": "#212C42",
+            },
+            "fontSize": "14px",
+            "fontWeight": 200,
+            "height": "32px",
+            "main": Object {
+              "border": "1px solid #ABADB5",
+              "color": "#212C42",
+            },
+            "width": "32px",
+          }
+        }
+        value={1}
+      >
+        <PageInput__Elem
+          border="1px solid #ABADB5"
+          color="#212C42"
+          fontSize="14px"
+          fontWeight={200}
+          height="32px"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          pattern="[0-9]*"
+          theme={
+            Object {
+              "disabled": Object {
+                "border": "",
+                "color": "#212C42",
+              },
+              "fontSize": "14px",
+              "fontWeight": 200,
+              "height": "32px",
+              "main": Object {
+                "border": "1px solid #ABADB5",
+                "color": "#212C42",
+              },
+              "width": "32px",
+            }
+          }
+          value={1}
+          width="32px"
+        >
+          <input
+            className="PageInput__Elem-bcunQx jCjGLK"
+            color="#212C42"
+            fontSize="14px"
+            fontWeight={200}
+            height="32px"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            pattern="[0-9]*"
+            value={1}
+            width="32px"
+          />
+        </PageInput__Elem>
+      </PageInput>
+      <IconWrap
+        onClick={[Function]}
+      >
+        <div
+          className="IconWrap-jLxEbf eGKZDW"
+          onClick={[Function]}
+        >
+          <RightPaginationArrow
+            fill="#212C42"
+            height="10"
+            viewBox="0 0 6 10"
+            width="6"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              fill="#212C42"
+              height="10"
+              viewBox="0 0 6 10"
+              width="6"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M1.887.331a1.087 1.087 0 0 0-1.563 0 1.145 1.145 0 0 0 0 1.596l3.008 3.074L.324 8.073a1.145 1.145 0 0 0 0 1.596c.432.441 1.13.441 1.563 0l3.79-3.87A1.14 1.14 0 0 0 6 5c0-.29-.108-.578-.324-.799L1.886.332z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </RightPaginationArrow>
+        </div>
+      </IconWrap>
+      <TotalPagesWrap
+        theme={
+          Object {
+            "disabled": Object {
+              "border": "",
+              "color": "#212C42",
+            },
+            "fontSize": "14px",
+            "fontWeight": 200,
+            "height": "32px",
+            "main": Object {
+              "border": "1px solid #ABADB5",
+              "color": "#212C42",
+            },
+            "width": "32px",
+          }
+        }
+      >
+        <TotalPagesWrap__Elem
+          border="1px solid #ABADB5"
+          color="#212C42"
+          fontSize="14px"
+          fontWeight={200}
+          height="32px"
+          theme={
+            Object {
+              "disabled": Object {
+                "border": "",
+                "color": "#212C42",
+              },
+              "fontSize": "14px",
+              "fontWeight": 200,
+              "height": "32px",
+              "main": Object {
+                "border": "1px solid #ABADB5",
+                "color": "#212C42",
+              },
+              "width": "32px",
+            }
+          }
+          width="32px"
+        >
+          <div
+            className="TotalPagesWrap__Elem-icper iMoLAH"
+            color="#212C42"
+            fontSize="14px"
+            fontWeight={200}
+            height="32px"
+            width="32px"
+          >
+            из 
+            44
+          </div>
+        </TotalPagesWrap__Elem>
+      </TotalPagesWrap>
+    </div>
+  </MainWrap>
+</Pagination>
+`;
