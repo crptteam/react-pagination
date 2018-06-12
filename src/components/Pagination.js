@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import defaultTheme from '../theme/defaultTheme';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import defaultTheme from "../theme/defaultTheme";
 
-import MainWrap from '../styled/MainWrap';
-import PageInput from '../styled/PageInput';
-import TotalPagesWrap from '../styled/TotalPagesWrap';
-import IconWrap from '../styled/IconWrap';
+import MainWrap from "../styled/MainWrap";
+import PageInput from "../styled/PageInput";
+import TotalPagesWrap from "../styled/TotalPagesWrap";
+import IconWrap from "../styled/IconWrap";
 
-import { LeftPaginationArrow, RightPaginationArrow } from '../svg';
+import { LeftPaginationArrow, RightPaginationArrow } from "../svg";
 
 class Pagination extends Component {
   constructor(props) {
     super(props);
 
-    this.displayName = 'Pagination';
+    this.displayName = "Pagination";
 
     this.state = {
       selected: +props.selected,
@@ -28,20 +28,16 @@ class Pagination extends Component {
     this.onKeyPress = this.onKeyPress.bind(this);
   }
   componentWillReceiveProps(props) {
-    //Only for storebook! This code is not needed
-    if (props.storybook) {
-      if (props.selected) {
-        this.setState({
-          selected:
-            props.selected < 1
-              ? 1
-              : props.selected > props.pagesCount
-                ? props.pagesCount
-                : props.selected
-        });
-      }
+    if (props.selected) {
+      this.setState({
+        selected:
+          props.selected < 1
+            ? 1
+            : props.selected > props.pagesCount
+              ? props.pagesCount
+              : props.selected
+      });
     }
-    //end
   }
   moveLeft() {
     const selected =
@@ -97,7 +93,7 @@ class Pagination extends Component {
   }
 
   onKeyPress(e) {
-    if (e.charCode === 13 || e.keyCode === 13 || e.key == 'Enter') {
+    if (e.charCode === 13 || e.keyCode === 13 || e.key == "Enter") {
       this.rightUpdate();
     }
   }
