@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { withTheme } from "styled-components";
 import defaultTheme from "../theme/defaultTheme";
 
 import MainWrap from "../styled/MainWrap";
@@ -143,4 +143,4 @@ Pagination.defaultProps = {
   onSelect: val => null
 };
 
-export default Pagination;
+export default withTheme(Pagination);

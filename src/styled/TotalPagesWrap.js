@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { getThemeAsPlainTextByKeys } from '../utils';
-import defaultTheme from '../theme/defaultTheme';
+import { getThemeAsPlainTextByKeys, innerMerge } from "../utils";
+import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
   js-display: inline-flex;
@@ -17,9 +17,15 @@ const Elem = styled.div`
 `;
 
 const TotalPagesWrap = props => {
+  const merged = innerMerge(
+    {},
+    defaultTheme.Pagination,
+    (props.theme && props.theme.Pagination) || {}
+  );
+
   const theme = getThemeAsPlainTextByKeys(
-    props.theme || defaultTheme,
-    props.disabled ? 'disabled' : 'main'
+    merged,
+    props.disabled ? "disabled" : "main"
   );
 
   return <Elem {...theme} {...props} />;
