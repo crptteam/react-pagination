@@ -35,9 +35,9 @@ class Pagination extends Component {
 
   getValueWidth(value) {
     if (!this.invisibleDiv) {
-      const theme = this.props.theme || defaultTheme;
+      const theme = this.props.theme.Pagination ? this.props.theme : defaultTheme;
 
-
+      console.log('theme', theme);
 
       this.invisibleDiv = document.createElement("div");
       this.invisibleDiv.style.fontSize = theme.Pagination.fontSize;
