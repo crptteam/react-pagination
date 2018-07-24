@@ -11,6 +11,6 @@ export default {
     fontWeight: 200,
     fontSize: "14px",
     height: "32px",
-    width: "32px"
+    minWidth: "32px"
   }
 };

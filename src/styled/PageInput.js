@@ -15,10 +15,9 @@ const Elem = styled.input`
   color: ${props => props.color};
   font-family: ${props => props.fontFamily};
   font-weight: ${props => props.fontWeight};
-  margin-left: 7px;
-  margin-right: 7px;
   outline: 0;
-  width: ${props => props.width};
+  min-width: ${props => props.minWidth};
+  width: 100%;
   box-sizing: border-box;
   height: ${props => props.height};
   text-align: center;
