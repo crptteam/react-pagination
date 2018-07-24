@@ -9,7 +9,6 @@ const MainWrap = styled.div`
   -moz-user-select: none;    
   -ms-user-select: none;      
   user-select: none;
-}
 `;
 
 export default MainWrap;
