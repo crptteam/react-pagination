@@ -43,6 +43,9 @@ class Pagination extends Component {
       this.invisibleDiv.style.position = "absolute";
       this.invisibleDiv.style.visibility = "hidden";
       this.invisibleDiv.style.pointerEvents = "none";
+      this.invisibleDiv.style.color = 'rgba(0,0,0,0);';
+      this.invisibleDiv.style.background = 'rgba(0,0,0,0);';
+      this.invisibleDiv.style.left = '-10000px';
       document.body.appendChild(this.invisibleDiv);
     }
     this.invisibleDiv.innerHTML = value;
