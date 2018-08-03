@@ -35,9 +35,12 @@ class Pagination extends Component {
 
   getValueWidth(value) {
     if (!this.invisibleDiv) {
-      const theme = this.props.theme && this.props.theme.Pagination ? this.props.theme : defaultTheme;
+      const theme =
+        this.props.theme && this.props.theme.Pagination
+          ? this.props.theme
+          : defaultTheme;
 
-      console.log('theme', theme);
+      console.log("theme", theme);
 
       this.invisibleDiv = document.createElement("div");
       this.invisibleDiv.style.fontSize = theme.Pagination.fontSize;
@@ -45,9 +48,9 @@ class Pagination extends Component {
       this.invisibleDiv.style.position = "absolute";
       this.invisibleDiv.style.visibility = "hidden";
       this.invisibleDiv.style.pointerEvents = "none";
-      this.invisibleDiv.style.color = 'rgba(0,0,0,0);';
-      this.invisibleDiv.style.background = 'rgba(0,0,0,0);';
-      this.invisibleDiv.style.left = '-10000px';
+      this.invisibleDiv.style.color = "rgba(0,0,0,0);";
+      this.invisibleDiv.style.background = "rgba(0,0,0,0);";
+      this.invisibleDiv.style.left = "-10000px";
       document.body.appendChild(this.invisibleDiv);
     }
     this.invisibleDiv.innerHTML = value;
@@ -94,7 +97,6 @@ class Pagination extends Component {
   }
 
   onChange(e) {
-
     const selected = e.target.validity.valid
       ? +e.target.value
       : this.state.selected;
@@ -131,11 +133,21 @@ class Pagination extends Component {
   }
 
   render() {
-    const { pagesCount, theme, selected, onSelect, ...otherProps } = this.props;
+    const {
+      pagesCount,
+      theme,
+      selected,
+      onSelect,
+      isInfinite,
+      ...otherProps
+    } = this.props;
+
+    const isLeftHidden = isInfinite && this.state.selected === 1;
 
     return (
       <MainWrap {...otherProps}>
-        <IconWrap onClick={this.moveLeft}>
+
+        <IconWrap onClick={this.moveLeft} hidden={isLeftHidden}>
           <LeftPaginationArrow />
         </IconWrap>
 
@@ -154,9 +166,10 @@ class Pagination extends Component {
           <RightPaginationArrow />
         </IconWrap>
 
-        <TotalPagesWrap theme={theme}>
+        <TotalPagesWrap visible={!isInfinite} theme={theme}>
           из {this.props.pagesCount}
         </TotalPagesWrap>
+
       </MainWrap>
     );
   }
@@ -167,7 +180,8 @@ Pagination.propTypes = {
   theme: PropTypes.object,
   pagesCount: PropTypes.number.isRequired,
   selected: PropTypes.number.isRequired,
-  onSelect: PropTypes.func.isRequired
+  onSelect: PropTypes.func.isRequired,
+  isInfinite: PropTypes.bool
 };
 
 Pagination.defaultProps = {

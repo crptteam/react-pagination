@@ -8,8 +8,9 @@ class Demo extends Component {
     return <div>
       <h1>react-pagination Demo</h1>
       <Pagination
-        pagesCount={666444555111}
-        selected={23444}
+        isInfinite
+        pagesCount={123123}
+        selected={1}
       />
     </div>
   }

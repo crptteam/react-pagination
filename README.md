@@ -22,6 +22,7 @@ import { Pagination } from  "@crpt/react-pagination";
 | pagesCount: Number (Required) | Pages count. |  `<Pagination pagesCount={22} selected={1} onSelect={num => alert(num)} />` |
 | selected: Number (Required) | Selected page. |  `<Pagination pagesCount={22} selected={1} onSelect={num => alert(num)} />` |
 | onSelect: Function (Required) | Fires on page change. |  `<Pagination pagesCount={22} selected={1} onSelect={num => alert(num)} />` |
+| isInfinite: Boolean | Removes left arrow on 1 page and hides pages count. |  `<Pagination pagesCount={22} selected={1} isInfinite />` |
 
 
 
