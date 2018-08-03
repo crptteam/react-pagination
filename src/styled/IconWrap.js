@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const IconWrap = styled.div`
-  js-display: inline-flex;
   display: inline-flex;
+  visibility: ${props => props.hidden ? 'hidden' : 'visible'};
   align-items: center;
   justify-content: center;
   width: 18px;

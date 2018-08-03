@@ -6,7 +6,7 @@ import defaultTheme from "../theme/defaultTheme";
 
 const Elem = styled.div`
   js-display: inline-flex;
-  display: inline-flex;
+  display: ${props => props.visible ? 'inline-flex' : 'none'};
   font-size: ${props => props.fontSize};
   color: ${props => props.color};
   align-items: center;
