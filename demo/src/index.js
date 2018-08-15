@@ -10,7 +10,10 @@ class Demo extends Component {
       <Pagination
         isInfinite
         pagesCount={123123}
+        pageCounterInvisible
         selected={1}
+        leftPaginationText="Предыдущая"
+        rightPaginationText="Следующая"
       />
     </div>
   }

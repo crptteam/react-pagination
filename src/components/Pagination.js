@@ -8,6 +8,8 @@ import PageInput from "../styled/PageInput";
 import TotalPagesWrap from "../styled/TotalPagesWrap";
 import IconWrap from "../styled/IconWrap";
 import InputWrap from "../styled/InputWrap";
+import LeftPaginationTextWrap from '../styled/LeftPaginationTextWrap';
+import RightPaginationTextWrap from '../styled/RightPaginationTextWrap';
 
 import { LeftPaginationArrow, RightPaginationArrow } from "../svg";
 
@@ -139,6 +141,9 @@ class Pagination extends Component {
       selected,
       onSelect,
       isInfinite,
+      pageCounterInvisible,
+      leftPaginationText,
+      rightPaginationText,
       ...otherProps
     } = this.props;
 
@@ -149,26 +154,45 @@ class Pagination extends Component {
 
         <IconWrap onClick={this.moveLeft} hidden={isLeftHidden}>
           <LeftPaginationArrow />
+          {leftPaginationText !== ''
+            ? (<LeftPaginationTextWrap>{leftPaginationText}</LeftPaginationTextWrap>)
+            : null
+          }
         </IconWrap>
 
-        <InputWrap theme={theme} width={this.state.width + "px"}>
-          <PageInput
-            pattern="[0-9]*"
-            value={this.state.selected}
-            onChange={this.onChange}
-            onBlur={this.onBlur}
-            onKeyPress={this.onKeyPress}
-            theme={theme}
-          />
-        </InputWrap>
+        {pageCounterInvisible
+          ? null
+          : (
+            <InputWrap
+              theme={theme}
+              width={this.state.width + "px"}
+              hidden={pageCounterInvisible}
+            >
+              <PageInput
+                pattern="[0-9]*"
+                value={this.state.selected}
+                onChange={this.onChange}
+                onBlur={this.onBlur}
+                onKeyPress={this.onKeyPress}
+                theme={theme}
+              />
+            </InputWrap>
+          )}
 
         <IconWrap onClick={this.moveRight}>
+          {rightPaginationText !== ''
+            ? (<RightPaginationTextWrap>{rightPaginationText}</RightPaginationTextWrap>)
+            : null
+          }
           <RightPaginationArrow />
         </IconWrap>
 
-        <TotalPagesWrap visible={!isInfinite} theme={theme}>
-          из {this.props.pagesCount}
-        </TotalPagesWrap>
+        {pageCounterInvisible
+          ? null
+          : (<TotalPagesWrap visible={!isInfinite} theme={theme}>
+              из {this.props.pagesCount}
+            </TotalPagesWrap>
+          )}
 
       </MainWrap>
     );
@@ -181,14 +205,20 @@ Pagination.propTypes = {
   pagesCount: PropTypes.number.isRequired,
   selected: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired,
-  isInfinite: PropTypes.bool
+  isInfinite: PropTypes.bool,
+  leftPaginationText: PropTypes.string,
+  rightPaginationText: PropTypes.string,
+  pageCounterInvisible: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
   theme: defaultTheme,
   pagesCount: 1,
   selected: 1,
-  onSelect: val => null
+  onSelect: val => null,
+  leftPaginationText: '',
+  rightPaginationText: '',
+  pageCounterInvisible: false,
 };
 
 export default withTheme(Pagination);
