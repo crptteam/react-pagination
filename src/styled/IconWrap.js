@@ -6,7 +6,7 @@ const IconWrap = styled.div`
   visibility: ${props => props.hidden ? 'hidden' : 'visible'};
   align-items: center;
   justify-content: center;
-  width: 18px;
+  width: auto;
   height: auto;
   cursor: pointer;
 `;

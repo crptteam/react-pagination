@@ -23,6 +23,10 @@ import { Pagination } from  "@crpt/react-pagination";
 | selected: Number (Required) | Selected page. |  `<Pagination pagesCount={22} selected={1} onSelect={num => alert(num)} />` |
 | onSelect: Function (Required) | Fires on page change. |  `<Pagination pagesCount={22} selected={1} onSelect={num => alert(num)} />` |
 | isInfinite: Boolean | Removes left arrow on 1 page and hides pages count. |  `<Pagination pagesCount={22} selected={1} isInfinite />` |
+| leftPaginationText: String| Text is located near left arrow icon | |
+| rightPaginationText: String| Text is located near right arrow icon | |
+| pageCounterInvisible: bool | When true the page counter (there is input field between the arrows) is hidden. And TotalPages field is invisible too. | |
+
 
 
 
