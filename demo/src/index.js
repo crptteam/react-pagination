@@ -8,9 +8,9 @@ class Demo extends Component {
     return <div>
       <h1>react-pagination Demo</h1>
       <Pagination
-        isInfinite
+        isBelowZeroDisabled
         pagesCount={123123}
-        pageCounterInvisible
+
         selected={1}
         leftPaginationText="Предыдущая"
         rightPaginationText="Следующая"

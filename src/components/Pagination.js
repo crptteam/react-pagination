@@ -72,9 +72,17 @@ class Pagination extends Component {
     }
   }
 
+  isRewindDisabled = () => {
+    const { isBelowZeroDisabled } = this.props;
+    const {selected} = this.state;
+    return isBelowZeroDisabled && selected === 1;
+  };
+
   moveLeft() {
     const selected =
       this.state.selected > 1 ? this.state.selected - 1 : this.props.pagesCount;
+
+    if (this.isRewindDisabled()) { return; }
 
     this.setState({
       selected,
@@ -148,12 +156,13 @@ class Pagination extends Component {
     } = this.props;
 
     const isLeftHidden = isInfinite && this.state.selected === 1;
+    const disabled = this.isRewindDisabled();
 
     return (
       <MainWrap {...otherProps}>
 
-        <IconWrap onClick={this.moveLeft} hidden={isLeftHidden}>
-          <LeftPaginationArrow />
+        <IconWrap onClick={this.moveLeft} hidden={isLeftHidden} disabled={disabled}>
+          <LeftPaginationArrow style={disabled ? { fill: '#C4C4C4' } : {}} />
           {leftPaginationText !== ''
             ? (<LeftPaginationTextWrap>{leftPaginationText}</LeftPaginationTextWrap>)
             : null
@@ -206,6 +215,7 @@ Pagination.propTypes = {
   selected: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired,
   isInfinite: PropTypes.bool,
+  isBelowZeroDisabled: PropTypes.bool,
   leftPaginationText: PropTypes.string,
   rightPaginationText: PropTypes.string,
   pageCounterInvisible: PropTypes.bool,
