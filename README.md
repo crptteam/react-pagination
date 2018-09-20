@@ -26,7 +26,7 @@ import { Pagination } from  "@crpt/react-pagination";
 | leftPaginationText: String| Text is located near left arrow icon | |
 | rightPaginationText: String| Text is located near right arrow icon | |
 | pageCounterInvisible: bool | When true the page counter (there is input field between the arrows) is hidden. And TotalPages field is invisible too. | |
-
+| isBelowZeroDisabled: bool | It is disabled changing page value from 0 to max | |
 
 
 
