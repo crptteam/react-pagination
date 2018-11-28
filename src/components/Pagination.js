@@ -4,12 +4,11 @@ import { withTheme } from "styled-components";
 import defaultTheme from "../theme/defaultTheme";
 
 import MainWrap from "../styled/MainWrap";
-import PageInput from "../styled/PageInput";
 import TotalPagesWrap from "../styled/TotalPagesWrap";
 import IconWrap from "../styled/IconWrap";
-import InputWrap from "../styled/InputWrap";
 import LeftPaginationTextWrap from '../styled/LeftPaginationTextWrap';
 import RightPaginationTextWrap from '../styled/RightPaginationTextWrap';
+import PageCounter from './PageCounter';
 
 import { LeftPaginationArrow, RightPaginationArrow } from "../svg";
 
@@ -152,6 +151,8 @@ class Pagination extends Component {
       pageCounterInvisible,
       leftPaginationText,
       rightPaginationText,
+      isSeparatedPageCounter,
+      withoutTotalPages,
       ...otherProps
     } = this.props;
 
@@ -171,22 +172,17 @@ class Pagination extends Component {
 
         {pageCounterInvisible
           ? null
-          : (
-            <InputWrap
+          : (<PageCounter
+              isSeparatedPageCounter={isSeparatedPageCounter}
               theme={theme}
-              width={this.state.width + "px"}
-              hidden={pageCounterInvisible}
-            >
-              <PageInput
-                pattern="[0-9]*"
-                value={this.state.selected}
-                onChange={this.onChange}
-                onBlur={this.onBlur}
-                onKeyPress={this.onKeyPress}
-                theme={theme}
-              />
-            </InputWrap>
-          )}
+              value={this.state.selected}
+              width={this.state.width}
+              onChange={this.onChange}
+              onBlur={this.onBlur}
+              onKeyPress={this.onKeyPress}
+              pages={this.props.pagesCount}
+            />)
+        }
 
         <IconWrap onClick={this.moveRight}>
           {rightPaginationText !== ''
@@ -198,7 +194,7 @@ class Pagination extends Component {
 
         {pageCounterInvisible
           ? null
-          : (<TotalPagesWrap visible={!isInfinite} theme={theme}>
+          : (<TotalPagesWrap visible={!isInfinite && !withoutTotalPages} theme={theme}>
               из {this.props.pagesCount}
             </TotalPagesWrap>
           )}
@@ -209,6 +205,8 @@ class Pagination extends Component {
 }
 
 Pagination.propTypes = {
+  isSeparatedPageCounter: PropTypes.bool,
+  withoutTotalPages: PropTypes.bool,
   className: PropTypes.string,
   theme: PropTypes.object,
   pagesCount: PropTypes.number.isRequired,
@@ -222,6 +220,8 @@ Pagination.propTypes = {
 };
 
 Pagination.defaultProps = {
+  isSeparatedPageCounter: false,
+  withoutTotalPages: false,
   theme: defaultTheme,
   pagesCount: 1,
   selected: 1,

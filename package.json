@@ -1,6 +1,6 @@
 {
   "name": "@crpt/react-pagination",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "react-input React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -23,6 +23,9 @@
     "access": "public"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
+    "recompact": "^3.4.0",
     "styled-components": "1.4.6 - 3"
   },
   "peerDependencies": {

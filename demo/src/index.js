@@ -8,9 +8,10 @@ class Demo extends Component {
     return <div>
       <h1>react-pagination Demo</h1>
       <Pagination
+        isSeparatedPageCounter
         isBelowZeroDisabled
-        pagesCount={123123}
-
+        pagesCount={10}
+        withoutTotalPages
         selected={1}
         leftPaginationText="Предыдущая"
         rightPaginationText="Следующая"
