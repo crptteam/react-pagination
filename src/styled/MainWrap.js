@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const MainWrap = styled.div`
   js-display: flex;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;      

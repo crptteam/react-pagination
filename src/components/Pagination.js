@@ -71,8 +71,14 @@ class Pagination extends Component {
 
   isRewindDisabled = () => {
     const { isBelowZeroDisabled } = this.props;
-    const {selected} = this.state;
+    const { selected } = this.state;
     return isBelowZeroDisabled && selected === 1;
+  };
+
+  isForwardDisabled = () => {
+    const { isUpperThenMaxDisabled, pagesCount } = this.props;
+    const { selected } = this.state;
+    return isUpperThenMaxDisabled && selected === pagesCount;
   };
 
   moveLeft() {
@@ -93,6 +99,8 @@ class Pagination extends Component {
   moveRight() {
     const selected =
       this.state.selected < this.props.pagesCount ? this.state.selected + 1 : 1;
+
+    if (this.isForwardDisabled()) { return; }
 
     this.setState({
       selected,
@@ -155,13 +163,14 @@ class Pagination extends Component {
     } = this.props;
 
     const isLeftHidden = isInfinite && this.state.selected === 1;
-    const disabled = this.isRewindDisabled();
+    const rewindDisabled = this.isRewindDisabled();
+    const forwardDisabled = this.isForwardDisabled();
 
     return (
       <MainWrap {...otherProps}>
 
-        <IconWrap onClick={this.moveLeft} hidden={isLeftHidden} disabled={disabled}>
-          <LeftPaginationArrow style={disabled ? { fill: '#C4C4C4' } : {}} />
+        <IconWrap onClick={this.moveLeft} hidden={isLeftHidden} disabled={rewindDisabled}>
+          <LeftPaginationArrow style={rewindDisabled ? { fill: '#C4C4C4' } : {}} />
           {leftPaginationText !== ''
             ? (<LeftPaginationTextWrap>{leftPaginationText}</LeftPaginationTextWrap>)
             : null
@@ -182,12 +191,12 @@ class Pagination extends Component {
             />)
         }
 
-        <IconWrap onClick={this.moveRight}>
+        <IconWrap onClick={this.moveRight} disabled={forwardDisabled} >
           {rightPaginationText !== ''
             ? (<RightPaginationTextWrap>{rightPaginationText}</RightPaginationTextWrap>)
             : null
           }
-          <RightPaginationArrow />
+          <RightPaginationArrow  style={forwardDisabled ? { fill: '#C4C4C4' } : {}} />
         </IconWrap>
 
         {pageCounterInvisible
@@ -212,6 +221,7 @@ Pagination.propTypes = {
   onSelect: PropTypes.func.isRequired,
   isInfinite: PropTypes.bool,
   isBelowZeroDisabled: PropTypes.bool,
+  isUpperThenMaxDisabled: PropTypes.bool,
   leftPaginationText: PropTypes.string,
   rightPaginationText: PropTypes.string,
   pageCounterInvisible: PropTypes.bool,
