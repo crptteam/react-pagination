@@ -32,11 +32,11 @@ import { Pagination } from  "@crpt/react-pagination";
 
 
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[build-badge]: https://img.shields.io/travis/crptteam/react-pagination/master.png?style=flat-square
+[build]: https://travis-ci.org/crptteam/react-pagination
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+[npm-badge]: https://img.shields.io/npm/v/@crpt/react-pagination/latest.png?style=flat-square
+[npm]: https://www.npmjs.org/package/@crpt/react-pagination
 
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
