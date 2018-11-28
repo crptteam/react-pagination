@@ -10,7 +10,7 @@ class Demo extends Component {
       <Pagination
         isSeparatedPageCounter
         isBelowZeroDisabled
-        pagesCount={10}
+        pagesCount={5}
         withoutTotalPages
         selected={1}
         leftPaginationText="Предыдущая"

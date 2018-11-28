@@ -41,8 +41,6 @@ class Pagination extends Component {
           ? this.props.theme
           : defaultTheme;
 
-      console.log("theme", theme);
-
       this.invisibleDiv = document.createElement("div");
       this.invisibleDiv.style.fontSize = theme.Pagination.fontSize;
       this.invisibleDiv.style.fontWeight = theme.Pagination.fontWeight;
