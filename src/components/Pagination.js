@@ -70,15 +70,15 @@ class Pagination extends Component {
   }
 
   isRewindDisabled = () => {
-    const { isBelowZeroDisabled } = this.props;
+    const { isBelowZeroDisabled, pagesCount } = this.props;
     const { selected } = this.state;
-    return isBelowZeroDisabled && selected === 1;
+    return pagesCount <= 1 || (isBelowZeroDisabled && selected === 1);
   };
 
   isForwardDisabled = () => {
     const { isUpperThenMaxDisabled, pagesCount } = this.props;
     const { selected } = this.state;
-    return isUpperThenMaxDisabled && selected === pagesCount;
+    return pagesCount <= 1 || (isUpperThenMaxDisabled && selected === pagesCount);
   };
 
   moveLeft() {

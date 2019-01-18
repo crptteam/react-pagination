@@ -9,14 +9,12 @@ class Demo extends Component {
       <h1>react-pagination Demo</h1>
       <div  style={{ height: '70px', display: 'flex', }} >
         <Pagination
-          isSeparatedPageCounter
+          pageCounterInvisible
           isBelowZeroDisabled
-          isUpperThenMaxDisabled
-          pagesCount={5}
-          withoutTotalPages
-          selected={1}
           leftPaginationText="Предыдущая"
           rightPaginationText="Следующая"
+          pagesCount={0}
+          selected={1}
         />
       </div>
     </div>
